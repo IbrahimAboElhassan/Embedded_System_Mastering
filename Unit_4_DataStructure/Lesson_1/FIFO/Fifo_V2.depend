@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1692892337 source:c:\users\ibrahim\onedrive\desktop\fifo_v2\main.c
+	<stdio.h>
+	"fifo_.h"
+
+1692892320 c:\users\ibrahim\onedrive\desktop\fifo_v2\fifo_.h
+	<stdint.h>
+
+1692892367 source:c:\users\ibrahim\onedrive\desktop\fifo_v2\fifo_.c
+	"fifo_.h"
+

@@ -1,0 +1,133 @@
+21:10:25 **** Incremental Build of configuration Debug for project Student_DataBase ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Linked_list.o" "..\\src\\Linked_list.c" 
+..\src\Linked_list.c: In function 'AddStudent':
+..\src\Linked_list.c:37:21: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   37 |                 if (pNewStudent = (struct SStudent*) malloc (sizeof(struct SStudent)))
+      |                     ^~~~~~~~~~~
+..\src\Linked_list.c: In function 'Delete_std':
+..\src\Linked_list.c:64:32: warning: initialization of 'struct Node *' from incompatible pointer type 'struct SStudent *' [-Wincompatible-pointer-types]
+   64 |     struct Node *pSelect_std = gp_FirstStudent;
+      |                                ^~~~~~~~~~~~~~~
+..\src\Linked_list.c:68:24: error: invalid use of undefined type 'struct Node'
+   68 |         if (pSelect_std->student.ID == selected_id) {
+      |                        ^~
+..\src\Linked_list.c:70:26: error: invalid use of undefined type 'struct Node'
+   70 |                 pPrev_std->pnext_Student = pSelect_std->pnext_Student;
+      |                          ^~
+..\src\Linked_list.c:70:55: error: invalid use of undefined type 'struct Node'
+   70 |                 pPrev_std->pnext_Student = pSelect_std->pnext_Student;
+      |                                                       ^~
+..\src\Linked_list.c:72:46: error: invalid use of undefined type 'struct Node'
+   72 |                 gp_FirstStudent = pSelect_std->pnext_Student;
+      |                                              ^~
+..\src\Linked_list.c:78:34: error: invalid use of undefined type 'struct Node'
+   78 |         pSelect_std = pSelect_std->pnext_Student;
+      |                                  ^~
+..\src\Linked_list.c: In function 'Print_list':
+..\src\Linked_list.c:85:33: warning: initialization of 'struct Node *' from incompatible pointer type 'struct SStudent *' [-Wincompatible-pointer-types]
+   85 |     struct Node *pCurrent_std = gp_FirstStudent;
+      |                                 ^~~~~~~~~~~~~~~
+..\src\Linked_list.c:93:44: error: invalid use of undefined type 'struct Node'
+   93 |             printf("ID: %d\n", pCurrent_std->student.ID);
+      |                                            ^~
+..\src\Linked_list.c:94:46: error: invalid use of undefined type 'struct Node'
+   94 |             printf("Name: %s\n", pCurrent_std->student.name);
+      |                                              ^~
+..\src\Linked_list.c:95:50: error: invalid use of undefined type 'struct Node'
+   95 |             printf("Height: %.2f\n", pCurrent_std->student.height);
+      |                                                  ^~
+..\src\Linked_list.c:97:40: error: invalid use of undefined type 'struct Node'
+   97 |             pCurrent_std = pCurrent_std->pnext_Student;
+      |                                        ^~
+..\src\Linked_list.c: In function 'Delete_all':
+..\src\Linked_list.c:104:33: warning: initialization of 'struct Node *' from incompatible pointer type 'struct SStudent *' [-Wincompatible-pointer-types]
+  104 |     struct Node *pCurrent_std = gp_FirstStudent;
+      |                                 ^~~~~~~~~~~~~~~
+..\src\Linked_list.c:108:36: error: invalid use of undefined type 'struct Node'
+  108 |         pCurrent_std = pCurrent_std->pnext_Student;
+      |                                    ^~
+..\src\Linked_list.c: In function 'get_index':
+..\src\Linked_list.c:118:30: warning: initialization of 'struct Node *' from incompatible pointer type 'struct SStudent *' [-Wincompatible-pointer-types]
+  118 |     struct Node *pLoop_std = gp_FirstStudent;
+      |                              ^~~~~~~~~~~~~~~
+..\src\Linked_list.c:128:21: error: invalid use of undefined type 'struct Node'
+  128 |         if(pLoop_std->pnext_Student == NULL){
+      |                     ^~
+..\src\Linked_list.c:133:26: error: invalid use of undefined type 'struct Node'
+  133 |     pLoop_std = pLoop_std->pnext_Student;
+      |                          ^~
+..\src\Linked_list.c:137:36: error: invalid use of undefined type 'struct Node'
+  137 |     printf("its id %d\n", pLoop_std->student.ID);
+      |                                    ^~
+..\src\Linked_list.c: In function 'get_NUMBER_ele':
+..\src\Linked_list.c:143:30: warning: initialization of 'struct Node *' from incompatible pointer type 'struct SStudent *' [-Wincompatible-pointer-types]
+  143 |     struct Node *pLoop_std = gp_FirstStudent;
+      |                              ^~~~~~~~~~~~~~~
+..\src\Linked_list.c:151:20: error: invalid use of undefined type 'struct Node'
+  151 |     while(pLoop_std->pnext_Student != NULL)
+      |                    ^~
+..\src\Linked_list.c:154:30: error: invalid use of undefined type 'struct Node'
+  154 |         pLoop_std = pLoop_std->pnext_Student;
+      |                              ^~
+..\src\Linked_list.c: In function 'get_at_end':
+..\src\Linked_list.c:161:30: warning: initialization of 'struct Node *' from incompatible pointer type 'struct SStudent *' [-Wincompatible-pointer-types]
+  161 |     struct Node *pmain_std = gp_FirstStudent;
+      |                              ^~~~~~~~~~~~~~~
+..\src\Linked_list.c:162:29: warning: initialization of 'struct Node *' from incompatible pointer type 'struct SStudent *' [-Wincompatible-pointer-types]
+  162 |     struct Node *pref_std = gp_FirstStudent;
+      |                             ^~~~~~~~~~~~~~~
+..\src\Linked_list.c:171:28: error: invalid use of undefined type 'struct Node'
+  171 |         pref_std = pref_std->pnext_Student;
+      |                            ^~
+..\src\Linked_list.c:182:20: error: invalid use of undefined type 'struct Node'
+  182 |     while (pref_std->pnext_Student != NULL) {
+      |                    ^~
+..\src\Linked_list.c:183:28: error: invalid use of undefined type 'struct Node'
+  183 |         pref_std = pref_std->pnext_Student;
+      |                            ^~
+..\src\Linked_list.c:184:30: error: invalid use of undefined type 'struct Node'
+  184 |         pmain_std = pmain_std->pnext_Student;
+      |                              ^~
+..\src\Linked_list.c:187:74: error: invalid use of undefined type 'struct Node'
+  187 |     printf("Student ID at index %d from the end: %d\n", index2, pmain_std->student.ID);
+      |                                                                          ^~
+..\src\Linked_list.c: In function 'get_Middle':
+..\src\Linked_list.c:197:30: warning: initialization of 'struct Node *' from incompatible pointer type 'struct SStudent *' [-Wincompatible-pointer-types]
+  197 |     struct Node *pFast_std = gp_FirstStudent;
+      |                              ^~~~~~~~~~~~~~~
+..\src\Linked_list.c:198:30: warning: initialization of 'struct Node *' from incompatible pointer type 'struct SStudent *' [-Wincompatible-pointer-types]
+  198 |     struct Node *pSlow_std = gp_FirstStudent;
+      |                              ^~~~~~~~~~~~~~~
+..\src\Linked_list.c:200:42: error: invalid use of undefined type 'struct Node'
+  200 |     while (pFast_std != NULL && pFast_std->PNextStudent != NULL)
+      |                                          ^~
+..\src\Linked_list.c:202:30: error: invalid use of undefined type 'struct Node'
+  202 |         pFast_std = pFast_std->PNextStudent->PNextStudent;
+      |                              ^~
+..\src\Linked_list.c:203:30: error: invalid use of undefined type 'struct Node'
+  203 |         pSlow_std = pSlow_std->PNextStudent;
+      |                              ^~
+..\src\Linked_list.c:206:48: error: invalid use of undefined type 'struct Node'
+  206 |     printf("Middle element ID: %d\n", pSlow_std->student.ID);
+      |                                                ^~
+..\src\Linked_list.c: In function 'reverse_list':
+..\src\Linked_list.c:217:28: warning: initialization of 'struct Node *' from incompatible pointer type 'struct SStudent *' [-Wincompatible-pointer-types]
+  217 |     struct Node *current = gp_FirstStudent;
+      |                            ^~~~~~~~~~~~~~~
+..\src\Linked_list.c:222:23: error: invalid use of undefined type 'struct Node'
+  222 |         next = current->pnext_Student; // Store the next node
+      |                       ^~
+..\src\Linked_list.c:223:16: error: invalid use of undefined type 'struct Node'
+  223 |         current->pnext_Student = prev; // Reverse the link
+      |                ^~
+..\src\Linked_list.c:229:21: warning: assignment to 'struct SStudent *' from incompatible pointer type 'struct Node *' [-Wincompatible-pointer-types]
+  229 |     gp_FirstStudent = prev; // Update the head of the list
+      |                     ^
+..\src\Linked_list.c: In function 'get_NUMBER_ele':
+..\src\Linked_list.c:157:1: warning: control reaches end of non-void function [-Wreturn-type]
+  157 | }
+      | ^
+
+21:10:25 Build Finished (took 162ms)
+

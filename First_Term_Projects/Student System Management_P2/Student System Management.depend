@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1694040568 source:c:\users\ibrahim\onedrive\desktop\students system management\student system management\std_management.c
+	"Std_Management.h"
+
+1694040568 c:\users\ibrahim\onedrive\desktop\students system management\student system management\std_management.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1694040579 source:c:\users\ibrahim\onedrive\desktop\students system management\student system management\main.c
+	"Std_Management.h"
+

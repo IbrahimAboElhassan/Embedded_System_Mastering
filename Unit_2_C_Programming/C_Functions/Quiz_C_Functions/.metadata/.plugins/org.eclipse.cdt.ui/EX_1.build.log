@@ -1,0 +1,15 @@
+16:52:51 **** Incremental Build of configuration Debug for project EX_1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\EX_1.o" "..\\src\\EX_1.c" 
+..\src\EX_1.c: In function 'main':
+..\src\EX_1.c:26:8: warning: implicit declaration of function 'strcmp' [-Wimplicit-function-declaration]
+   26 |     if(strcmp(name1 , name2)==0)
+      |        ^~~~~~
+..\src\EX_1.c:13:1: note: include '<string.h>' or provide a declaration of 'strcmp'
+   12 | #include <stdlib.h>
+  +++ |+#include <string.h>
+   13 | 
+gcc -o EX_1.exe "src\\EX_1.o" 
+
+16:52:51 Build Finished (took 326ms)
+

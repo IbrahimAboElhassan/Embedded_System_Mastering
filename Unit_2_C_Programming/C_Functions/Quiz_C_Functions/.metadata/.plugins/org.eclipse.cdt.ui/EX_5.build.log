@@ -1,0 +1,7 @@
+17:10:02 **** Incremental Build of configuration Debug for project EX_5 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\EX_5.o" "..\\src\\EX_5.c" 
+gcc -o EX_5.exe "src\\EX_5.o" 
+
+17:10:02 Build Finished (took 283ms)
+

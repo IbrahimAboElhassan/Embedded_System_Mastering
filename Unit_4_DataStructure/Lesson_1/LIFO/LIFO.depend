@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1692818264 source:d:\embedded system dip\projects\lifo\lifo.c
+	"lifo.h"
+
+1692818264 d:\embedded system dip\projects\lifo\lifo.h
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+
+1692818264 source:d:\embedded system dip\projects\lifo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lifo.h"
+
+1692818264 source:d:\embedded system dip_ks\unit_4_datastructure\lesson_1\lifo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lifo.h"
+
+1692818264 d:\embedded system dip_ks\unit_4_datastructure\lesson_1\lifo\lifo.h
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+

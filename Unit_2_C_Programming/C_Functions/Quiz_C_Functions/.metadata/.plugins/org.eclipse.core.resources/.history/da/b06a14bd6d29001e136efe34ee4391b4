@@ -1,0 +1,29 @@
+/*
+ ============================================================================
+ Name        : EX_7.c
+ Author      : Ibrahim Abo Elhassan
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <math.h>
+
+int checkPowerof3(unsigned n);
+int main()
+{
+    unsigned n;
+    printf("Enter a number: ");
+    fflush(stdout);
+    scanf("%u", &n);
+    checkPowerof3(n) ? printf("%u ==> 1", n) : printf("%u ==> 0", n);
+}
+
+int checkPowerof3(unsigned n)
+{
+    double i = log(n) / log(3);
+
+    return i == trunc(i);
+}
