@@ -1,11 +1,4 @@
 /*
- * main.c
- *
- *  Created on: Sep 10, 2023
- *      Author: ibrahim
- */
-
-/*
  ============================================================================
  Name        : main.c
  Author      : Ibrahim Abo Elhassan

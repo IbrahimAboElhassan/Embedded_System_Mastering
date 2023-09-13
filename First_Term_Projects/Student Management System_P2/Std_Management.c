@@ -1,11 +1,4 @@
 /*
- * Std_Management.c
- *
- *  Created on: Sep 10, 2023
- *      Author: ibrahim
- */
-
-/*
  * std_mangement.c
  *
  *  Created on: Sep 4, 2023

@@ -1,14 +1,6 @@
 /*
  * Std_Management.h
  *
- *  Created on: Sep 10, 2023
- *      Author: ibrahim
- */
-
-
-/*
- * Std_Management.h
- *
  *  Created on: Sep 4, 2023
  *      Author: ibrahim
  */
