@@ -1,4 +1,11 @@
 /*
+ * main.c
+ *
+ *  Created on: Sep 10, 2023
+ *      Author: ibrahim
+ */
+
+/*
  ============================================================================
  Name        : main.c
  Author      : Ibrahim Abo Elhassan
@@ -17,16 +24,13 @@ int main()
     Fifo_buf students;
     Fifo_status init_status  = System_init(&students, student_list, MAX_STUDENTS);
 
-    int result;
-    char read_date[81];
-
 
     if (init_status == FIFO_No_error) {
         int choice;
 
         while (1) {
-            printf("  == Welcome in our system management ==\n");
-            printf("\t\t## Our Menu ## \n");
+            printf(" == Welcome in our system management ==\n");
+            printf("\t\t|| Our Menu ||\n");
             printf("\t1.  Add Student from file\n");
             printf("\t2.  Add Student Manually\n");
             printf("\t3.  Find student info from his first name\n");
@@ -64,7 +68,8 @@ int main()
                             printf("Error closing the file.\n");
                             }
                         } else {
-                        printf("File not opened successfully.\n");
+                        printf("[ERROR] File not opened successfully.\n");
+                        printf("=========================================\n");
                         }
                     } else {
                         printf("Cannot add more students, the list is full.\n");
@@ -112,7 +117,7 @@ int main()
                     }
 
                 default:
-                    printf("Wrong choice. Please choose again.\n");
+                    printf("[ERROR] Wrong choice. Please choose again.\n");
                     printf("\n");
             }
         }
@@ -122,4 +127,5 @@ int main()
 
     return 0;
 }
+
 

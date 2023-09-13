@@ -1,3 +1,9 @@
+/*
+ * Std_Management.c
+ *
+ *  Created on: Sep 10, 2023
+ *      Author: ibrahim
+ */
 
 /*
  * std_mangement.c
@@ -308,36 +314,44 @@ void Delete_student_By_id(Fifo_buf* student)
     int id_delete;
 
     if (List_is_empty(student) == FIFO_Empty)
-        {
-            printf("[NOTE] The student list is empty and your request can't achieve.\n");
-            printf("\n");
-            return;
-        }
+    {
+        printf("[NOTE] The student list is empty and your request can't achieve.\n");
+        printf("\n");
+        return;
+    }
 
     printf("Enter an id to delete: ");
     scanf("%d", &id_delete);
 
+    int found = 0; // Flag to check if the student was found and deleted
+
     for (int i = 0; i < student->counter; i++) {
         if (student->base[i].student_ID == id_delete) {
-            // Move the last student to the deleted student's position
-            student->base[i] = student->base[student->counter - 1];
+            found = 1; // Student found
+            printf("Student with ID %d deleted\n", id_delete);
+
+            for (int j = i; j < student->counter - 1; j++) {
+                student->base[j] = student->base[j + 1];
+            }
+
             student->counter--;
-            printf("Student with ID %d deleted \n", id_delete);
             printf("=============================\n");
             printf("\n");
-            return;
+            break;
         }
     }
 
-    printf("This ID [%d]  is Not FOUND to delete it \n", id_delete);
-    printf("\n");
+    if (!found) {
+        printf("This ID [%d] is NOT FOUND to delete it\n", id_delete);
+        printf("\n");
+    }
 }
+
 
 
 void Update_student_info(Fifo_buf* student)
 {
     int id, ch;
-    Item *new_std = student->base;
 
     if (List_is_empty(student) == FIFO_Empty)
         {
@@ -360,19 +374,24 @@ void Update_student_info(Fifo_buf* student)
             printf("5. courses id\n");
             printf("Please choose which data to update: ");
             scanf("%d", &ch);
+            printf("\n");
 
             switch (ch) {
                 case 1:
                     printf("Enter a first name: ");
                     scanf("%s", up_std->student_first_name);
-                    printf("\tUpdate First Name [%s] is DONE Successfully \n",up_std->student_first_name);
-                    printf("\t========================================================\n");
+                    printf("\n");
+                    printf("\t[NOTE] Update First Name [%s] is DONE Successfully \n",up_std->student_first_name);
+                    printf("===============================================================\n");
+                    printf("\n");
                     break;
                 case 2:
                     printf("Enter a last name: ");
                     scanf("%s", up_std->student_last_name);
-                    printf("\tUpdate Last Name [%s] is Done Successfully\n",up_std->student_last_name);
-                    printf("\t======================================================== \n");
+                    printf("\n");
+                    printf("\t[NOTE] Update Last Name [%s] is Done Successfully\n",up_std->student_last_name);
+                    printf("=============================================================== \n");
+                    printf("\n");
                     break;
                 case 3:
                     int new_id;
@@ -393,15 +412,18 @@ void Update_student_info(Fifo_buf* student)
                     } while (!Is_unique);
 
                     up_std->student_ID = new_id;
-
-                    printf("\t Update New Id [%d] is Done Successfully\n", up_std->student_ID);
-                    printf("\t======================================================== \n");
+                    printf("\n");
+                    printf("\t[NOTE] Update New Id [%d] is Done Successfully\n", up_std->student_ID);
+                    printf("=============================================================== \n");
+                    printf("\n");
                     break;
                 case 4:
                     printf("Enter a new GPA: ");
                     scanf("%f", &up_std->student_GPA);
-                    printf("\tUpdate New Id [%f] is Done Successfully\n",up_std->student_GPA);
-                    printf("\t======================================================== \n");
+                    printf("\n");
+                    printf("\t[NOTE] Update New Id [%f] is Done Successfully\n",up_std->student_GPA);
+                    printf("=============================================================== \n");
+                    printf("\n");
                     break;
                 case 5:
                     printf("Enter the course ID number to update (1-5): ");
@@ -428,8 +450,10 @@ void Update_student_info(Fifo_buf* student)
 
                     if (!already_registered) {
                         up_std->student_courses_ids[NO_c - 1] = new_c_id;
-                        printf("\tUpdate New Course id [%d] is DONE Successfully\n",new_c_id);
-                        printf("\t======================================================== \n");
+                        printf("\n");
+                        printf("\t[NOTE] Update New Course id [%d] is DONE Successfully\n",new_c_id);
+                        printf("=============================================================== \n");
+                        printf("\n");
                     }
 
 
@@ -449,7 +473,6 @@ void Update_student_info(Fifo_buf* student)
 
 void Show_all_number(Fifo_buf* student)
 {
-    int count = 1;
     Item* travers = student->base;
 
     if(student->counter == 0)
