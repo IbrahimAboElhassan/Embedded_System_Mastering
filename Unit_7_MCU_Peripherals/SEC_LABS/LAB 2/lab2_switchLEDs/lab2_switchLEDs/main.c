@@ -6,7 +6,7 @@
  */ 
 
 #define F_CPU 8000000UL
-#include <avr/io.h>
+#include "MemoryMap.h"
 #include <util/delay.h>
 #include "Utils.h"
 
