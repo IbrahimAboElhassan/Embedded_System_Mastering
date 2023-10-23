@@ -1,0 +1,50 @@
+/*
+ * USART_Driver_stm32f103c6.h
+ *
+ *  Created on: Oct 6, 2023
+ *      Author: Ibrahim Abo Elhassan
+ */
+
+#ifndef INC_USART_DRIVER_STM32F103C6_H_
+#define INC_USART_DRIVER_STM32F103C6_H_
+
+//-----------------------------
+//Includes
+//-----------------------------
+
+#include <stm32f103x6.h>
+#include "GPIO_Driver_stm32f103c6.h"
+#include "RCC_Driver_stm32f103c6.h"
+
+//-----------------------------
+//User type definitions (Structure configuration)
+//-----------------------------
+
+typedef struct
+{
+	uint8_t           USART_Mode;  //Specifies TX & RX Enable/Disable
+	                               // This parameter must be set based on @ref USART_Mode_define.
+
+
+}USART_PinConfig_t;
+
+
+//-----------------------------
+//Macros Configuration References
+//-----------------------------
+
+// ref USART_Mode_define.
+#define USART_Mode_TX                        (uint8_t)(1 << 3)             //Transmitter Enable
+#define USART_Mode_RX                        (uint8_t)(1 << 2)             //Receiver Enable
+#define USART_Mode_TX_RX                     (uint8_t)(1 << 2 | 1 << 3)    //Receiver & Transmitter Enable
+
+
+
+
+
+
+
+
+
+
+#endif /* INC_USART_DRIVER_STM32F103C6_H_ */

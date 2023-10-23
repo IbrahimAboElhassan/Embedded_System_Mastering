@@ -1,0 +1,87 @@
+/*
+ * USART_Driver_stm32f103c6.c
+ *
+ *  Created on: Oct 6, 2023
+ *      Author: Ibrahim Abo Elhassan
+ */
+
+#include "USART_Driver_stm32f103c6.h"
+
+
+
+/*
+* ===============================================
+* 					Generic Variables
+* ===============================================
+* */
+
+
+USART_PinConfig_t* Global_USART_config = NULL;
+
+
+/*
+* ===============================================
+* 					Generic Functions
+* ===============================================
+*/
+
+
+/*
+* ===============================================
+* 					APIs Function Definitions
+* ===============================================
+*/
+
+/**================================================================
+ * @Fn           - MCAL_USART_Init
+ * @brief        - Initialization of USART
+ * @param [in]   - USARTx: where x is (1,2,3..)
+ * @param [in]   - P_Cfg: All configuration for USART
+ * @retval       - None
+ * Note          - None
+ */
+void MCAL_USART_Init(USART_REG_typedef* USARTx ,USART_PinConfig_t* P_Cfg)
+{
+	Global_USART_config = P_Cfg;
+	uint32_t pclk , BRR;
+
+    // Enable USART peripherals clock.
+	if (USARTx == USART1)
+		RCC_USART1_Clock_Enable;
+
+	else if (USARTx == USART2)
+		RCC_USART2_Clock_Enable;
+
+	else if (USARTx == USART3)
+		RCC_USART3_Clock_Enable;
+
+	// Enable USART Module (Bit 13 UE: USART enable)
+	USARTx->CR1 |= (1 << 13);
+	// Enable TX,RX
+	USARTx->CR1 |= P_Cfg->USART_Mode;
+	// Data length
+	USARTx->CR1 |= P_Cfg->Data_Length;
+	// Configuration of parity bit.
+	USARTx->CR1 |= P_Cfg->Parity_Check;
+	// Stop bit
+	USARTx->CR2 |= P_Cfg->StopBit;
+	// Flow control
+	USARTx->CR3 |= P_Cfg->HwFlowControl;
+	// Configuration of BRR
+	// PCLK 1 <<>> USART 2,3
+	// PCLK 2 <<>> USART 1
+
+	if(USARTx == USART1)
+		pclk = MCAL_RCC_Get_PCLK1_Freq();
+
+
+
+
+
+
+
+
+
+
+
+}

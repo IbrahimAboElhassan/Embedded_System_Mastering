@@ -1,0 +1,50 @@
+21:20:34 **** Incremental Build of configuration Debug for project Driver ****
+make -j12 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded System dip_KS/Unit_7_Projects/Drivers/Driver/stm32_f103c6_driver/KeyPad_Driver" -I"D:/Embedded System dip_KS/Unit_7_Projects/Drivers/Driver/stm32_f103c6_driver/LCD_Driver" -I"D:/Embedded System dip_KS/Unit_7_Projects/Drivers/Driver/stm32_f103c6_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'IRQ_callback':
+../Src/main.c:118:33: warning: passing argument 2 of 'MCAL_USART_ReceiveData' from incompatible pointer type [-Wincompatible-pointer-types]
+  MCAL_USART_ReceiveData(USART1, &ch, disable);
+                                 ^
+In file included from ../Src/main.c:16:0:
+D:/Embedded System dip_KS/Unit_7_Projects/Drivers/Driver/stm32_f103c6_driver/inc/USART_Driver_stm32f103c6.h:134:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_USART_ReceiveData(USART_REG_typedef* USARTx , uint16_t* PRxBuffer , enum Polling_mechansim pollingEn);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:119:30: warning: passing argument 2 of 'MCAL_USART_SendData' from incompatible pointer type [-Wincompatible-pointer-types]
+  MCAL_USART_SendData(USART1, &ch, enable);
+                              ^
+In file included from ../Src/main.c:16:0:
+D:/Embedded System dip_KS/Unit_7_Projects/Drivers/Driver/stm32_f103c6_driver/inc/USART_Driver_stm32f103c6.h:132:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_USART_SendData(USART_REG_typedef* USARTx , uint16_t* PTxBuffer , enum Polling_mechansim pollingEn);
+      ^~~~~~~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:208:34: warning: passing argument 2 of 'MCAL_USART_ReceiveData' from incompatible pointer type [-Wincompatible-pointer-types]
+   MCAL_USART_ReceiveData(USART1, &ch,enable);
+                                  ^
+In file included from ../Src/main.c:16:0:
+D:/Embedded System dip_KS/Unit_7_Projects/Drivers/Driver/stm32_f103c6_driver/inc/USART_Driver_stm32f103c6.h:134:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_USART_ReceiveData(USART_REG_typedef* USARTx , uint16_t* PRxBuffer , enum Polling_mechansim pollingEn);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:209:31: warning: passing argument 2 of 'MCAL_USART_SendData' from incompatible pointer type [-Wincompatible-pointer-types]
+   MCAL_USART_SendData(USART1, &ch, enable);
+                               ^
+In file included from ../Src/main.c:16:0:
+D:/Embedded System dip_KS/Unit_7_Projects/Drivers/Driver/stm32_f103c6_driver/inc/USART_Driver_stm32f103c6.h:132:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_USART_SendData(USART_REG_typedef* USARTx , uint16_t* PTxBuffer , enum Polling_mechansim pollingEn);
+      ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "Driver.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded System dip_KS\Unit_7_Projects\Drivers\Driver\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Driver.elf
+ 
+arm-none-eabi-objdump -h -S  Driver.elf  > "Driver.list"
+arm-none-eabi-objcopy  -O binary  Driver.elf  "Driver.bin"
+arm-none-eabi-size   Driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2756	      8	   1640	   4404	   1134	Driver.elf
+Finished building: default.size.stdout
+ 
+Finished building: Driver.bin
+Finished building: Driver.list
+ 
+ 
+
+21:20:35 Build Finished. 0 errors, 4 warnings. (took 478ms)
+

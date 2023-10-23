@@ -1,0 +1,88 @@
+/*
+ * USART_Driver_stm32f103c6.h
+ *
+ *  Created on: Oct 6, 2023
+ *      Author: Ibrahim Abo Elhassan
+ */
+
+#ifndef INC_USART_DRIVER_STM32F103C6_H_
+#define INC_USART_DRIVER_STM32F103C6_H_
+
+//-----------------------------
+//Includes
+//-----------------------------
+
+#include <stm32f103x6.h>
+#include "GPIO_Driver_stm32f103c6.h"
+#include "RCC_Driver_stm32f103c6.h"
+
+//-----------------------------
+//User type definitions (Structure configuration)
+//-----------------------------
+
+typedef struct
+{
+	uint8_t           USART_Mode  ;    // Specifies TX & RX Enable/Disable.
+	                                   // This parameter must be set based on @ref USART_Mode_define.
+
+	uint32_t          BaudRate    ;    // This member configure USART communication Baudrate.
+                                	   // This parameter must be set based on @ref USART_BaudRate_define.
+
+	uint8_t           Data_Length ;    // Specifies number of data bits transmitted or received in frame.
+									   // This parameter must be set based on @ref USART_Data_Length_define.
+
+	uint8_t           Parity_Check;    // Specifies Parity bit.
+									   // This parameter must be set based on @ref USART_Parity_Check_define.
+
+	uint8_t           StopBit     ;    // Specifies number of stopbits transmitted.
+	                                   // This parameter must be set based on @ref USART_StopBit_define.
+
+
+
+
+
+
+}USART_PinConfig_t;
+
+
+//-----------------------------
+//Macros Configuration References
+//-----------------------------
+
+// ref USART_Mode_define.
+#define USART_Mode_TX                        (uint32_t)(1 << 3)             //Transmitter Enable
+#define USART_Mode_RX                        (uint32_t)(1 << 2)             //Receiver Enable
+#define USART_Mode_TX_RX                     (uint32_t)(1 << 2 | 1 << 3)    //Receiver & Transmitter Enable
+
+// ref USART_BaudRate_define.
+#define USART_BaudRate_2400                  2400
+#define USART_BaudRate_9600                  9600
+#define USART_BaudRate_19200                 19200
+#define USART_BaudRate_57600                 57600
+#define USART_BaudRate_115200                115200
+#define USART_BaudRate_230400                230400
+#define USART_BaudRate_460800                460800
+#define USART_BaudRate_921600                921600
+#define USART_BaudRate_2250000               2250000
+#define USART_BaudRate_4500000               4500000
+
+// ref USART_Data_Length_define.
+#define USART_Data_Length_8B                 (uint32_t)(0)
+#define USART_Data_Length_9B                 (uint32_t)(1<<12)
+
+// ref USART_Parity_Check_define.
+#define USART_Parity_Check_NONE              (uint32_t)(0)
+#define USART_Parity_Check_EVEN              (uint32_t)(1 << 10)
+#define USART_Parity_Check_ODD               ((uint32_t)(1 << 10 | 1 << 9))
+
+//@ref USART_StopBit_define.
+#define USART_StopBit_half                    (uint32_t)(1<<12)
+
+
+
+
+
+
+
+
+#endif /* INC_USART_DRIVER_STM32F103C6_H_ */

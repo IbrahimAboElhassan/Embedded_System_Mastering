@@ -1,0 +1,46 @@
+/*
+ * USART_Driver_stm32f103c6.c
+ *
+ *  Created on: Oct 6, 2023
+ *      Author: Ibrahim Abo Elhassan
+ */
+
+#include "USART_Driver_stm32f103c6.h"
+
+
+
+/*
+* ===============================================
+* 					Generic Variables
+* ===============================================
+* */
+
+
+USART_PinConfig_t* Global_USAART_config = NULL;
+
+
+/*
+* ===============================================
+* 					Generic Functions
+* ===============================================
+*/
+
+
+/*
+* ===============================================
+* 					APIs Function Definitions
+* ===============================================
+*/
+
+/**================================================================
+ * @Fn           - MCAL_USART_Init
+ * @brief        - Initialization of USART
+ * @param [in]   - USARTx: where x is (1,2,3..)
+ * @param [in]   - P_Cfg: All configuration for USART
+ * @retval       - None
+ * Note          - None
+ */
+void MCAL_USART_Init(USART_REG_typedef* USARTx ,USART_PinConfig_t* P_Cfg)
+{
+
+}
