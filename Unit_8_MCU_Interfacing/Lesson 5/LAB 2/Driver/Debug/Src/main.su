@@ -1,0 +1,5 @@
+main.c:44:6:GPIO_init	4	static
+main.c:111:6:CLOCK_init	4	static
+main.c:122:6:SPI_IRQ_callback	16	static
+main.c:135:6:IRQ_callback	4	static
+main.c:169:5:main	56	static
